@@ -8,20 +8,26 @@ let btnMail = document.getElementById("user_mail")
 // Click per invio mail e verifica
 btnMail.addEventListener("click",
     () => {
+        let pass;
+        let noPass;
         let mailUser = document.querySelector("input").value
         for (let i = 0; i < mailDB.length; i++) {
             let listMail = mailDB[i]
-            console.log(listMail)
+            // console.log(listMail)
             
             if (mailUser === listMail) {
-                console.log("mail presente")
-                mailContainer.innerHTML = "<li>Presente</li>"
+                pass = "Presente"
             } else {
-                console.log("mail non presente")
-                mailContainer.innerHTML = "<li>Non Presente</li>"
+                noPass = "Non Presente"
+            }
+
+            if (pass === "Presente") {
+                mailContainer.innerHTML = "<li>presente</li>"
+            } else {
+                mailContainer.innerHTML = "<li>non presente</li>"
             }
         }
-    }
+    }  
 )
 // for (let i = 0; i < mailDB.length; i++){
 //     let listMail = mailDB[i]
