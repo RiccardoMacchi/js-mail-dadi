@@ -1,20 +1,39 @@
 // Chiedi all’utente la sua email, controlla che sia nella lista di chi può accedere, stampa un messaggio appropriato sull’esito del controllo.
 
-let mailUser = prompt("qual è la tua mail?")
+
 const mailDB = ["mario@gmail.com","filippo@gmail.com","alessia@gmail.com","jhonny@gmail.com"]
 const mailContainer = document.getElementById("mail_container")
+// Creazione bottone
+let btnMail = document.getElementById("user_mail")
+// Click per invio mail e verifica
+btnMail.addEventListener("click",
+    () => {
+        let mailUser = document.querySelector("input").value
+        for (let i = 0; i < mailDB.length; i++) {
+            let listMail = mailDB[i]
+            console.log(listMail)
+            
+            if (mailUser === listMail) {
+                console.log("mail presente")
+                mailContainer.innerHTML = "<li>Presente</li>"
+            } else {
+                console.log("mail non presente")
+                mailContainer.innerHTML = "<li>Non Presente</li>"
+            }
+        }
+    }
+)
+// for (let i = 0; i < mailDB.length; i++){
+//     let listMail = mailDB[i]
 
-for (let i = 0; i < mailDB.length; i++){
-    let listMail = mailDB[i]
-
-    if (mailUser === listMail){
-        console.log("mail presente nel database")
-        mailContainer.innerHTML = "<li>presente</li>"
-    } else if (mailUser !== listMail){
-        console.log("Tu Non Puoi Passareeee!!")
-        mailContainer.innerHTML = "<li>Non Presente</li>"
-    } 
-}
+//     if (mailUser === listMail){
+//         console.log("mail presente nel database")
+//         mailContainer.innerHTML = "<li>presente</li>"
+//     } else if (mailUser !== listMail){
+//         console.log("Tu Non Puoi Passareeee!!")
+//         mailContainer.innerHTML = "<li>Non Presente</li>"
+//     } 
+// }
 
 // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer. Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
@@ -27,7 +46,8 @@ dadiContainer.addEventListener("click",
         let numPc = Math.floor(Math.random() * 6)
 
         // Creazion elemento p in pagina
-        let newP = document.createElement("p")
+        let newP = document.createElement("div")
+        newP.className = "my_style"
         // Elemento appena creato attacoto al div dadiContainer
         dadiContainer.append(newP)
         // Stampa in pagina

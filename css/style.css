@@ -4,12 +4,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 2rem;
 }
 
+/* Regole mail */
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+input {
+    padding: 10px;
+}
+
+
+/* Regole dadi */
 #dadi_container {
     height: 150px;
     text-align: center;
     background-color: blue;
     border: 1px solid green;
     border-radius: 10px;
+}
+
+.my_style {
+    margin: 0 auto;
+    background-color: yellow;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.my_style h3 {
+    margin: 20px auto;
 }
