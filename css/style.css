@@ -4,37 +4,112 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+body {
+    background-color: #FAD02C;
+    min-height: 100vh;
+    background-image: url(https://static-cse.canva.com/_next/static/assets/wave_w2881xh801_98aaf3a37b4d733bdb3bc7754c25ad3608c520c5ebb9b1079f2d0c2f78b07ab8.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 /* Regole mail */
 
+header {
+    border-bottom: 1px solid black;
+    box-shadow: 0px 3px 16px black;
+}
+
+header h2 {
+    padding: 10px;
+}
+
 #container {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px 10px;
+    background-color: #FD7F20;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 input {
     padding: 10px;
+    margin-left: 10px;
+}
+
+#mail_container {
+    text-align: center;
+}
+
+#user_mail {
+    background-color: #010100;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 35px;
+    color: #FDB750;
+}
+
+#user_mail::after {
+    clear: both;
+    display: block;
+    content: "";
 }
 
 
 /* Regole dadi */
 #dadi_container {
-    height: 150px;
+    width: 70%;
+    padding: 20px 0;
     text-align: center;
-    background-color: blue;
-    border: 1px solid green;
+    background-color: #E9EAEC;
+    border: 1px solid black;
     border-radius: 10px;
+    margin: 40px auto;
+}
+
+#dadi_container h3 {
+    color: ;
 }
 
 .my_style {
-    margin: 0 auto;
-    background-color: yellow;
+    margin: 20px 40px;
+    background-color:#FD7F20;
     border: 1px solid black;
     border-radius: 10px;
 }
 
 .my_style h3 {
     margin: 20px auto;
+}
+
+.win {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #B7AC44;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.lose {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #FC2E20;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.draw {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #E3E8E9;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
 }

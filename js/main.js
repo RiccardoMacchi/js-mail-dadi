@@ -8,24 +8,22 @@ let btnMail = document.getElementById("user_mail")
 // Click per invio mail e verifica
 btnMail.addEventListener("click",
     () => {
-        let pass;
-        let noPass;
+        let pass = false
         let mailUser = document.querySelector("input").value
         for (let i = 0; i < mailDB.length; i++) {
             let listMail = mailDB[i]
             // console.log(listMail)
             
             if (mailUser === listMail) {
-                pass = "Presente"
-            } else {
-                noPass = "Non Presente"
-            }
-
-            if (pass === "Presente") {
-                mailContainer.innerHTML = "<li>presente</li>"
-            } else {
-                mailContainer.innerHTML = "<li>non presente</li>"
-            }
+                pass = true
+            } 
+        }
+        if (pass) {
+            mailContainer.className = "win"
+            mailContainer.innerHTML = "<span>presente</span>"
+        } else {
+            mailContainer.className = "lose"
+            mailContainer.innerHTML = "<span>non presente</span>"
         }
     }  
 )
@@ -60,18 +58,19 @@ dadiContainer.addEventListener("click",
         newP.innerHTML = `<h3>IL NUMERO DEL GIOCATORE E' ${numPl}</h3><h3>IL NUMERO DEL PC E' ${numPc}`
         console.log("Numero del Giocatore", numPl)
         console.log("numero del PC", numPc)
+        let result = document.getElementById("risultato")
         // comparazione di victa
         if (numPl > numPc) {
-            let myP = document.getElementById("risultato")
-            myP.append("Il giocatore ha vinto!!")
+            result.className = "win"
+            result.append("Il giocatore ha vinto!!")
             console.log("Giocatore vincente")
         } else if (numPc > numPl) {
-            let myP = document.getElementById("risultato")
-            myP.append("Il PC ha vinto!!")
+            result.className = "lose"
+            result.append("Il PC ha vinto!!")
             console.log("Pc vincente")
         } else {
-            let myP = document.getElementById("risultato")
-            myP.append("Pareggio!!")
+            result.className = "draw"
+            result.append("Pareggio!!")
             console.log("Pareggio")
         }
     }
